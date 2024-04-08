@@ -10,6 +10,8 @@ const bodyparser = require('body-parser')
 //Declare routers
 const Indexrouter = require('./routes/index')
 const Partnerrouter = require('./routes/partner')
+const productRouter = require('./routes/product')
+
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -39,8 +41,9 @@ db.on('error',error=>console.log(error))
 //Just open once time and
 db.once('open',()=> console.log("Connect to database sucess"))
 
-//Get index view with router
+//Get link with router
 app.use('/',Indexrouter)
 app.use('/partners',Partnerrouter)
+app.use('/products',productRouter)
 
 app.listen(process.env.PORT||4000)

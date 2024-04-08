@@ -1,0 +1,17 @@
+<label for="">Title product</label>
+<!--Fill out partner name and make a variable to send to route file   -->
+<input type="text" name="product_name" placeholder="product" value="<%= product.name%>">
+<label for="">Description</label>
+<input type="text" name="partner_country">
+<label for="">Partner</label>
+<select name = "partner">
+  <% partners.forEach(partner => { %>
+   <% if (partner.id === product.partner) { %>
+    <option selected label="<%= partner.name%>" value="<%= partner.id %>"></option>
+   <% }else { %>
+    <option label="<%= partner.name%>" value="<%= partner.id %>"></option>
+    <% } %>
+   
+  <% }) %>
+</select>
+

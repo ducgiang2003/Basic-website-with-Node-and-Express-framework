@@ -31,7 +31,7 @@ router.get('/',async(req,res)=>
 //New partner route
 router.get('/new',(req,res)=>
 {
-    res.render('partners/new',{partner:new partnerModule(searchOptions)})
+    res.render('partners/new',{partner:new partnerModule()})
 })
 //Create partner route
 router.post('/',async(req,res)=>
@@ -51,7 +51,7 @@ router.post('/',async(req,res)=>
   const newPartner = await partner.save()
   {
     //with url have partner id 
-    res.redirect(`partners/${newPartner.id}`)
+    // res.redirect(`partners/${newPartner.id}`)
     res.redirect(`partners`)
   }
    }catch
