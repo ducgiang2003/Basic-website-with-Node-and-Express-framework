@@ -33,13 +33,13 @@ router.get('/new',(req,res)=>
 {
     res.render('partners/new',{partner:new partnerModule()})
 })
-//Create partner route
 router.post('/',async(req,res)=>
 {
    
     //This function will upload data to DB 
    const partner = new partnerModule({
     name :req.body.partner_name,
+    country:req.body.partner_country,
    })
    //Must async(asynchonous(Dong bo)) 
    //Wrap code in try-catch block , if have an error it'll redirect another page like partners/new
@@ -51,8 +51,8 @@ router.post('/',async(req,res)=>
   const newPartner = await partner.save()
   {
     //with url have partner id 
-    // res.redirect(`partners/${newPartner.id}`)
-    res.redirect(`partners`)
+    res.redirect(`partners/${newPartner.id}`)
+  
   }
    }catch
    {
@@ -75,4 +75,76 @@ router.post('/',async(req,res)=>
 //     })
 //    }
 })
+//id will passed on along with the request with the colon before
+//id in here is id with every single partner 
+router.get('/:id',async (req,res)=>
+{
+  try{
+  res.redirect('/partners')
+  }
+  catch{
+    res.redirect('/partners')
+  }
+})
+router.get('/:id/edit',async (req,res)=>
+{
+  try
+  {
+    //Find id every single partner in mongo db
+    const partner = await partnerModule.findById(req.params.id)
+  res.render('partners/edit',{partner:partner})
+  }catch
+  {
+    res.redirect('/partners')
+  }
+})
+
+router.put('/:id', async (req,res)=>
+{
+  let partner
+  try {
+    partner = await partnerModule.findById(req.params.id)
+    partner.name = req.body.partner_name
+    partner.country = req.body.partner_country
+    await partner.save()
+    res.redirect(`/partners/${partner.id}`)
+  } catch {
+    if(partner==null)
+    {
+      res.redirect('/')
+    }else{
+    
+    
+      res.render('partners/edit', {
+        partner: partner,
+        errorMessage: 'Error updating Partner'
+      })
+    }
+  }
+  
+})
+
+
+router.delete('/:id',async (req,res)=>
+{
+    //Just delete instead save and need a delete function (use pre(remove) method)
+    //And dont need get req.body in view class 
+  let partner
+  try {
+    partner = await partnerModule.findById(req.params.id)
+    await partner.deleteOne()
+    res.redirect(`/partners/${partner.id}`)
+  } catch {
+    if(partner==null)
+    {
+      res.redirect('/')
+    }else{
+    
+    //And after delete it, it will return to partners page 
+     res.redirect(`/partners/${partner.id}`)
+    }
+  }
+})
+//Create partner route
+
 module.exports=router;

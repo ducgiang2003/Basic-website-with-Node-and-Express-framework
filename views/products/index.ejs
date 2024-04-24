@@ -1,0 +1,27 @@
+<h2>Search Products</h2>
+<form action="/products" method="get">
+<div>
+<label for="">Product Name</label>
+<input type="text" placeholder="Your product you want to find" name="title" value="<%=searchOptions.name %>" >
+<button type="submit" >Search</button>
+</div>
+<div>
+<label for="">Published After</label>
+<input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+</div>
+<div>
+    <label for="">Published Before</label>
+    <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+</div>
+<div>
+    <label for=""></label>
+</div>
+</form>
+<br>
+<div>
+<% products.forEach(product => { %>
+ <div>
+   <img height="300" width="300" src="<%= product.coverImagePath %>">
+</div>
+<% }) %>
+</div>

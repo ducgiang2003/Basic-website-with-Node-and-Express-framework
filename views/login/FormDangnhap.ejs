@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="icon" type="x-icon" href="sneakers.ico">
+    <link rel="stylesheet" href="/css/FormDangnhap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container register-container">
+        <form id="register-form">
+          <h1>ĐĂNG KÝ</h1>
+          <div class="form-control">
+            <input type="text" id="username" name="username" placeholder="Tên" />
+            <small id="username-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="email" id="email" name="email" placeholder="Email" />
+            <small id="email-error"></small>
+            <span></span>
+          </div>
+          <span id="icon-container">
+            <i class="fas fa-eye-slash" id="toggle-password"></i>
+        </span>
+          <div class="form-control">
+            <input type="password" id="password" name="password" placeholder="Mật khẩu" />
+            <small id="password-error"></small>
+            <span></span>
+        </div>
+        
+          <div class="form-control">
+            <input type="password" id="password-confirm" name="password-confirm" placeholder="Xác nhận mật khẩu" />
+            <small id="password-confirm-error"></small>
+            <span></span>
+        </div>
+        <span id="confirm-icon-container">
+          <i class="fas fa-eye-slash" id="toggle-confirm-password"></i>
+      </span>
+          <button type="submit" id="register-button" value="submit"style="font-size: 12px;">ĐĂNG KÝ</button>
+          <!-- <span>HOẶC SỬ DỤNG TÀI KHOẢN KHÁC</span>
+          <div class="social-container">
+            <a href="#" class="social"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+            <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
+          </div> -->
+        </form>
+      </div>
+
+      <div class="form-container login-container">
+        <form action="/login" method="post">
+        <form class="form-lg">
+          
+          <h1>ĐĂNG NHẬP</h1>
+          <% if (locals.errorMessage!=null) { %>
+            <%= errorMessage %>
+        <% } %>
+          <div class="form-control2">
+            <input type="text" class="email-2" placeholder="Email" name="userName" required />
+            <small class="email-error-2"></small>
+            <span></span>
+          </div>
+          <div class="form-control2">
+            <input type="password" class="password-2" placeholder="Mật khẩu" name ="pass_word" required  />
+            <small class="password-error-2"></small>
+            <span></span>
+          </div>
+
+          <div class="content">
+            <div class="checkbox">
+              <input type="checkbox" name="checkbox" id="checkbox" />
+              <label for="">Nhớ tài khoản</label>
+            </div>
+            <div class="pass-link">
+              <a href="#">Quên mật khẩu</a>
+            </div>
+          </div>
+          <button id="myButton" type="submit" value="submit" style="font-size:13px; margin: 0px ; padding: 12px 80px;">ĐĂNG NHẬP</button>
+    
+          <span>HOẶC SỬ DỤNG TÀI KHOẢN KHÁC</span>
+        </form>
+          <div class="social-container">
+            <a href="#" class="social"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+            <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </form>
+      </div>
+      <form action="/signup" method="get">
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="title">
+              XIN CHÀO!
+            </h1>
+            <p style="font-family: Arial, Helvetica, sans-serif;">Nếu Bạn Đã Có Tài Khoản Hãy Đăng Nhập Tại Đây</p>
+            <button class="ghost" id="login" style="font-size:13px; margin: 0px ; padding: 12px 80px;">
+              ĐĂNG NHẬP
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h1 class="title">
+              HALA MADRID!
+            </h1>
+            <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 50px; margin-bottom: 10px;">
+              Nếu Bạn Chưa Có Tài Khoản Hãy Đăng Ký Tại Đây
+            </p>
+           
+            <button class="ghost" id="register" style="margin-top: 0;">
+              ĐĂNG KÝ
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  
+</html>

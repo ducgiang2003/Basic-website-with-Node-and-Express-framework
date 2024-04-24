@@ -2,7 +2,8 @@
 <h2>
     New product
 </h2>
-<form action="/products" method="post">
+<!-- enctype respresent for multiform , it mean user will upload data file to sever  -->
+<form action="/products" method="post" enctype="multipart/form-data">
     <%- include('form_fields') %>
 <a href="/products">Cancle</a>
 <button type="submit"> Create</button>

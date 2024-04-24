@@ -6,8 +6,22 @@
 </form>
 <br>
 <% partners.forEach(partner => { %>
+
  <div>
-    <%= partner.name %> <br>
-    <%= partner.country  %>
+    <table border="1" cellPadding="1">
+        <tr>
+            <td>Họ và tên</td>
+            <td>Quê quán </td>
+        </tr>
+        <tr>
+            <td><%= partner.name %></td>
+            <td><%= partner.country %></td>
+        </tr>
+    </table>
 </div>
+<a href="/partners/<%= partner.id %>">View</a><br>
+
+<a href="/partners/<%= partner.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm.ejs',
+              { url: `/partners/${partner.id}` }) %>
 <% }) %>

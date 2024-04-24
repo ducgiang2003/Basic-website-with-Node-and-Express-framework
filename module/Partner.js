@@ -1,26 +1,23 @@
-//This file will make a partner modulde( partner schema ) 
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const Product = require('./product');
 
-const mongoose = require('mongoose')
+const partnerSchema = new Schema({
+  name: {
+    type: String,
+    required: true // Bỏ dấu ':' sau require
+  },
+  country: {
+    type: String,
+    required: true
+  }
+});
 
-const partnerSchema = new mongoose.Schema(
-    {
-        name:{
-            type:String,
-            required:true
-        },
-        country:{
-             type:String,
-             required:true
-        },
-        numberContact:{
-            type:String,
-            required:true
-        },
-        postition:{
-            type:String,
-            required:true
-        }
-    }
-
-)
-module.exports=mongoose.model('Partner',partnerSchema)
+// Giữ nguyên phần pre('remove') và model
+partnerSchema.pre('remove',function(next){
+    //Find product of this partner => must know partner id to equal partner in schema 
+    
+    Product.find({partner:this.id},(err,products))
+    
+    })
+module.exports = mongoose.model('Partner', partnerSchema);
