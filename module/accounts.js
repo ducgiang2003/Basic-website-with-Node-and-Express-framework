@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator');
+mongoose.connect('mongodb://localhost/Test_01')
+const bcrypt =require('bcryptjs')
 const accountSchema = new mongoose.Schema({
  userName:{
      type:String,
@@ -10,9 +12,14 @@ const accountSchema = new mongoose.Schema({
     type:String,
     required: true
  },
- name:
- {
-    type:String,
- }
+ 
 }) ;
+accountSchema.pre('save', async function (next) {
+    if (this.isModified('password')) {
+      const salt = await bcrypt.genSalt(10);
+      this.password = await bcrypt.hash(this.password, salt);
+    }
+    next();
+  });
+
 module.exports=mongoose.model('accounts',accountSchema)

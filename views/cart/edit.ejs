@@ -1,0 +1,29 @@
+<h2>Chỉnh sửa giỏ hàng</h2>
+<form action="/home/cart/<%= sneakers.id %>?_method=PUT" method="post">
+    
+<label for="">Chọn mẫu giày</label>
+<select name="mauGiay" id="" required>
+  <option></option>
+    <option >Adidas</option>
+    <option >Supreme</option>
+</select>
+
+<input type="hidden" name="giaCa" value="2300000" >
+<label for="">Chọn size giày</label>
+<select name="sizeGiay" id="" required>
+  <option > </option>
+    <option >35</option>
+     <option >36</option>
+     <option >37</option>
+    <option >38</option>
+    <option >39</option>
+    <option >40</option>
+    <option >41</option>
+    <option >42</option>
+    <option >43</option>
+    <option >44</option>
+  </select>
+  <label for=""> Chọn số lượng</label>
+  <input type="number" name="soLuong" min="1" required>
+<button type="submit">Update</button>
+</form>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers</title>
+    <link rel="icon" type="x-icon" href="sneakers.ico">
+    <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img class="logonike" src="/img/logonike.png" alt="" height="30px" width="80px" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand" href="#">
+              <img class="logonike" src="/img/logoadidas.png" alt="" height="50px" width="80px" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand" href="#">
+              <img class="logonike" src="/img/logopuma.png" alt="" height="50px" width="80px" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand" href="#">
+              <img class="logonike" src="/img/logonb.png" alt="" height="40px" width="100px" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <form action="/home" method="post">
+                <button type="submit" class="btn btn-light" id="complaintBtn" >KHIẾU NẠI</button>
+              </form>
+                <div id="complaintFormContainer" style="display: none;">
+                  <h4>Khiếu Nại</h4>
+      
+                  <form id="complaintForm">
+                    <div class="mb-3">
+                      <label for="complaintName" class="form-label">Họ và Tên</label>
+                      <input type="text" class="form-control" id="complaintName" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="complaintPhone" class="form-label">Số Điện Thoại</label>
+                      <input type="text" class="form-control" id="complaintPhone" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="complaintEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="complaintEmail">
+                    </div>
+                    <div class="mb-3">
+                      <label for="complaintMessage" class="form-label">Nội dung khiếu nại</label>
+                      <textarea class="form-control" id="complaintMessage" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="complaintConfirmation" id="complaintConfirmationYes" value="yes" required>
+                        <label class="form-check-label" for="complaintConfirmationYes">
+                          Tôi xác nhận rằng các thông tin trên là đúng và đồng ý với các điều khoản.
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="complaintConfirmation" id="complaintConfirmationNo" value="no">
+                        <label class="form-check-label" for="complaintConfirmationNo">
+                          Tôi chưa đồng ý với các điều khoản.
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi Khiếu Nại</button>
+                  </form>
+                </div>
+                
+                <li class="nav-item">
+                  <a href="/home/cart" class="giohang"><i><img src="/img/giohang.png" alt="" height="30px" width="30px"></i></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="https://www.realmadrid.com/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.realmadrid.com/futbol/partidos/calendario">Lịch Thi Đấu</a>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Áo Thi Đấu
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="Aosannha.html">Bộ Sân Nhà</a></li>
+                    <li><a class="dropdown-item" href="https://shop.realmadrid.com/products/rmcfmz0130-mens-away-authentic-shirt-23-24-navy">Bộ Sân Khách</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="https://www.adidas.com.vn/vi/ao-jersey-tap-luyen-real-madrid-tiro-23/IB0867.html">Bộ Di Chuyển</a></li>
+                  </ul>
+                </li> -->
+              </ul>
+              <form class="d-flex" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                <!-- <button class="btn btn-outline-success" type="submit">ĐĂNG NHẬP</button> -->
+                
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+        <div class="row">
+          <div class="col-3 ">
+            <div class="fixed-card" id="fixedCard">
+              <div class="card" >
+                <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="/img/giay1.png" class=" w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/img/giay4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/img/giay5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          NIKE
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item hieuung"><a href="#" onclick="scrollToContent()" class="dropdown-item">Sneakers</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Running</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Soccer</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Basketball</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          ADIDAS
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Sneakers</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Running</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Soccer</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Basketball</a></li>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          PUMA
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Sneakers</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Running</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Soccer</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Basketball</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                          NEW BALANCE
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <ul class="list-group list-group-flush ">
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Sneakers</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Running</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Soccer</a></li>
+                          <li class="list-group-item hieuung"><a href="#" class="dropdown-item">Basketball</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-9"><div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="/img/bia1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>ÁO THI ĐẦU MÙA GIẢI 2023-2024</h5>
+                  <p>ÁO VỪA RẺ VỪA ĐẸP TỘI GÌ MÀ KHÔNG MUA</p> -->
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="/img/new1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>BELLINGHAM!!!</h5>
+                  <p>MỘT BẢN HỢP ĐỒNG CHẤT LƯỢNG CỦA REAL MADRID</p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/img/bia5.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <!-- <h5>VINICIUS</h5>
+                  <p>TỪ MỘT ĐỨA TRẺ HAM RÊ DẮT THÀNH TRỤ CỘT CỦA ĐỘI BÓNG</p> -->
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="/img/new4.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>TONI KROOS GIA HẠN HỢP ĐỒNG</h5>
+                  <p>VỚI SỰ NĂN NỈ CỦA BAN LÃNH ĐẠO VÀ NGƯỜI HÂM MỘ CUỐI CÙNG ANH 8 NGHIỆP CŨNG GIA HẠN HỢP ĐỒNG</p>
+                </div>
+              </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div></div>
+            
+        </div>  
+        <br>
+          <div class="alert alert-primary" role="alert">
+            <h4 style="color: black; padding-bottom: 5px; font-family:'Times New Roman', Times, serif; font-weight: bold;">NIKE. JUST DO IT</h4>
+            <div class="row nike">
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/giay.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Air Jodan Low</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>3.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/giay.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Air Jodan Low</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>3.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/giay.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Air Jodan Low</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>3.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/giay.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Air Jodan Low</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>3.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-primary" role="alert">
+            <h4 style="color: black; padding-bottom: 5px; font-family:'Times New Roman', Times, serif; font-weight: bold;">ADIDAS</h4>
+            <div class="row nike">
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/adidas.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Adidas Originals</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/adidas.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Adidas Originals</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/adidas.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Adidas Originals</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/adidas.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Adidas Originals</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.000.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-primary" role="alert">
+            <h4 style="color: black; padding-bottom: 5px; font-family:'Times New Roman', Times, serif; font-weight: bold;">PUMA</h4>
+            <div class="row nike">
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/puma.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Puma Caven</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.800.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/puma.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Puma Caven</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.800.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/puma.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Puma Caven</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.800.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/puma.jpg" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">Puma Caven</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.800.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-primary" role="alert">
+            <h4 style="color: black; padding-bottom: 5px; font-family:'Times New Roman', Times, serif; font-weight: bold;">NEW BALANCE</h4>
+            <div class="row nike">
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/nb.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">New Balance 550</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.500.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/nb.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">New Balance 550</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.500.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/nb.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">New Balance 550</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.500.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3">
+                <a href="">
+                  <div class="card bangiay" >
+                    <img src="/img/nb.webp" class="card-img-top anhgiay" alt="...">
+                    <div class="card-body">
+                      <p class="card-text tengiay">New Balance 550</p>
+                      <h4 class="giaynam">Men's Shoes</h4>
+                      <h6>2.500.000đ</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+    </div>   
+    <!-- jQuery (được yêu cầu) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Thư viện JavaScript của Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+</body>
+</html>

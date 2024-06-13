@@ -1,0 +1,96 @@
+.logonike{
+    padding-right: 10px;
+}
+.card-body{
+    align-items: center;
+}
+.navbar{
+    position: fixed;
+}
+.hieuung{
+    transition: all 0.3s;
+    position: relative;
+}
+
+.hieuung:hover{
+    transform: scale(1.1 );
+    font-weight: bold;
+    z-index: 1;
+}
+.giohang{
+    padding-right: 20px;
+}
+.collapsed{
+    font-weight: bold;
+}
+.fixed-card {
+    position: relative; /* Giữ position là relative */
+    width: 100%; /* Điều chỉnh chiều rộng theo ý muốn */
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 0px;
+    top: 0px;
+  }
+.alert{
+    text-align: center;
+}
+.tengiay{
+    font-weight: bold;
+    font-size: 20px;
+}
+.giaynam{
+    font-size: 15px;
+    color: gray;
+    opacity: 0.5;
+}
+a {
+    text-decoration: none !important;
+  }
+/* .card {
+    overflow: hidden; 
+} */
+.anhgiay:hover{
+    transform: scale(1.1);
+    border-radius: 5%;
+}
+.alert.alert-primary {
+    background-image: url('/img/bgr1.jpg'); /* Đường dẫn tới hình ảnh */
+    background-size: cover; /* Đảm bảo hình ảnh sẽ được che phủ toàn bộ phần nền */
+    background-position: center; /* Căn giữa hình ảnh */
+}
+
+/* Phóng to mà không tràn hình ra ngoài */
+/* .hailai{
+    position: relative;
+    transition: opacity 0.3s;
+}
+.hailai:hover{
+    opacity: 1;
+}
+.hieuungmo{
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+.hailai .hieuungmo{
+    opacity: 0.3 ;
+} */
+.khieunai{
+    padding-right: 20px;
+}
+.btn-light{
+    margin-right: 15px;
+}
+#complaintFormContainer {
+    position: fixed; /* hoặc absolute */
+    top: 50%; /* Đặt vị trí top tùy ý */
+    left: 50%; /* Đặt vị trí left tùy ý */
+    transform: translate(-50%, -50%); /* Để căn giữa form */
+    z-index: 9999; /* Đảm bảo form nổi lên trên các phần còn lại của trang */
+    background-color: white; /* Màu nền của form */
+    padding: 20px; /* Khoảng cách từ viền của form đến các phần tử bên trong */
+    border: 1px solid #ccc; /* Đường viền của form */
+  }
+  .btn-primary{
+    float: right;
+  }
+  

@@ -35,29 +35,29 @@ router.get('/new',(req,res)=>
 })
 router.post('/',async(req,res)=>
 {
-   
+  
+
+// Sử dụng hàm kiểm tra
+const str = req.body.partner_name
+const str2 =req.body.partner_country
     //This function will upload data to DB 
    const partner = new partnerModule({
-    name :req.body.partner_name,
-    country:req.body.partner_country,
-   })
-   //Must async(asynchonous(Dong bo)) 
+    name :str,
+    country:str2,
    //Wrap code in try-catch block , if have an error it'll redirect another page like partners/new
-
+  })
    try
    {
    //Try to wait partner save and it will save then it will populate in newPartner
    //In short , wait partner save and it will populate in newPartner const
   const newPartner = await partner.save()
-  {
     //with url have partner id 
-    res.redirect(`partners/${newPartner.id}`)
-  
-  }
+    res.render('home/successForm')
+
    }catch
    {
     res.render('partners/new',{
-      partner : partner,
+      
       errorMessage:'Error to make a new partner'
     })
    }

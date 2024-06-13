@@ -1,3 +1,4 @@
+<%- include('../partials/header.ejs') %>
 <h2>Search Partner</h2>
 <label for="">Name</label>
 <form action="partners" method="get">
@@ -6,7 +7,6 @@
 </form>
 <br>
 <% partners.forEach(partner => { %>
-
  <div>
     <table border="1" cellPadding="1">
         <tr>

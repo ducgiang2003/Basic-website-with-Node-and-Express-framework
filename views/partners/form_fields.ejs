@@ -1,9 +1,33 @@
+<% if (locals.errorMessage!=null) { %>
+    <p style="color: red;"><%= errorMessage %></p> 
+ <% } %>
+ 
 <div>
-    <label for="">Partner name</label>
+    <label for="">Tên khách hàng</label>
     <!--Fill out partner name and make a variable to send to route file   -->
-    <input type="text" name="partner_name" placeholder="Please fill out your name here" value="<%= partner.name %>">
+    <input type="text" name="partner_name" placeholder="Please fill out your name here" required>
 </div>
 <div>
-    <label for="">Country</label>
-    <input type="text" name="partner_country" value="<%= partner.country %>">
+    <label for="">Địa chỉ khách hàng</label>
+    <input type="text" name="partner_country"  required>
 </div>
+<script>
+function containsSpecialCharacters(str) {
+    // Biểu thức chính quy để kiểm tra xem chuỗi có chứa ký tự đặc biệt không
+    const regex = /[!@#$%^&*(),.?":{}|<>]/;
+
+    // Sử dụng phương thức test() để kiểm tra chuỗi
+    return regex.test(str);
+}
+
+// Lấy giá trị của input từ req.body hoặc bất kỳ nguồn dữ liệu nào khác
+const partnerName = req.body.partner_name;
+const partnerCountry = req.body.partner_country;
+
+// Kiểm tra xem các giá trị của input có chứa ký tự đặc biệt không
+const containsSpecialCharsName = containsSpecialCharacters(partnerName);
+const containsSpecialCharsCountry = containsSpecialCharacters(partnerCountry);
+
+console.log(containsSpecialCharsName); // true hoặc false
+console.log(containsSpecialCharsCountry); // true hoặc false
+</script>

@@ -1,0 +1,9 @@
+<h1>Đơn khiếu  nại </h1>
+
+<form action="/complain" method="post">
+    <% if (locals.errorMessage!=null) { %>
+        <p style="color: red;"><%= errorMessage %></p> 
+     <% } %>
+<input type="text" name ="name" placeholder="Viết vào đây">
+<button type="submit">Khiếu nại</button>
+</form>
