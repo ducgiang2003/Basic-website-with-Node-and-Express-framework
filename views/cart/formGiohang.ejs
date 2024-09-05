@@ -1,0 +1,52 @@
+<!-- views/cart/formGiohang.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng thật sự</title>
+</head>
+<body>
+    <h1>Giỏ hàng</h1>
+    
+    <% if (sneakers.length > 0) { %>
+        <table border='1' cellpadding="1" cellspacing="1" text-align="center">
+            <thead>
+                <tr>
+                    <th>Tên giày</th>
+                    <th>Size</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% sneakers.forEach(function(sneaker) { %>
+                    <tr>
+                        <td><%= sneaker.name %></td>
+                        <td><%= sneaker.size %></td>
+                        <td><%= sneaker.price %></td>
+                        <td><%= sneaker.number %></td>
+                        <td><a href="/home/cart/<%= sneaker.id %>">View</a>
+                        </td>
+                        <td><a href="/home/cart/<%= sneaker.id %>/edit">Edit</a>
+                        </td>
+                        <td>
+                            <%- include('../home/deleteForm',
+              { url: `/home/cart/${sneaker.id}` }) %>
+                        </td>
+                        <td><a href="/partners/new">Thanh toán</a></td>
+                    </tr>
+                    <
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>Giỏ hàng của bạn đang trống.</p>
+    <% } %>
+
+    <% if (errorMessage) { %>
+        <p><%= errorMessage %></p>
+    <% } %>
+</body>
+</html>

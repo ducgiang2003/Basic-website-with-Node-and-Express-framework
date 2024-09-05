@@ -9,7 +9,7 @@ res.render('login/loginForm.ejs')
 })
 router.post('/',async(req,res)=>
 {
-    const { userName, password } = req.body;
+    const { userName, password,name } = req.body;
     
         const existingAccount = await userModule.findOne({ userName });
         
@@ -22,7 +22,7 @@ router.post('/',async(req,res)=>
         }
         else
         {
-        const newAccount = new userModule({ userName, password });
+        const newAccount = new userModule({ userName, password ,name });
     await newAccount.save();
     res.redirect('login')
           }  

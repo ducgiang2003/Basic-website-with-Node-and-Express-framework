@@ -1,0 +1,29 @@
+<!-- views/cart/formGiohang.ejs -->
+<h1>Hiển thị sản phẩm</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tên giày</th>
+                <th>Size</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= sneakers.name %></td>
+                <td><%= sneakers.size %></td>
+                <td><%= sneakers.price %></td>
+                <td><%= sneakers.number %></td>
+                <td><a href="/home/cart/<%= sneakers.id %>/edit">Edit</a>
+                </td>
+                <td>
+                    <%- include('../home/deleteForm',
+                    { url: `/home/cart/${sneakers.id}` }) %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    

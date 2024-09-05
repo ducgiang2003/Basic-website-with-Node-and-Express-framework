@@ -8,12 +8,15 @@ const app=express();
 const expressLayouts = require('express-ejs-layouts')
 const bodyparser = require('body-parser')
 const methodOverride = require('method-override')
+const path = require('path')
 //Declare routers
 const Indexrouter = require('./routes/index')
 const Partnerrouter = require('./routes/partner')
 const productRouter = require('./routes/product')
 const loginRouter =require('./routes/login')
 const signupRouter = require('./routes/signup')
+const homeRounter = require('./routes/home')
+const complainRounter = require('./routes/complain')
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -29,6 +32,7 @@ app.use(methodOverride('_method'))
 //Get static file from public folder like img or ...
 app.use(express.static('public'))
 app.use(express.static(__dirname + '/public'));
+
 //Set up bodyparser
 //Sending file with max value 16 mb and  and found it in bodyparser lib 
 app.use(bodyparser.urlencoded({limit:'16mb',extended:false}))
@@ -54,5 +58,6 @@ app.use('/login',loginRouter)
 app.use('/partners',Partnerrouter)
 app.use('/products',productRouter)
 app.use('/signup',signupRouter)
-
+app.use('/home',homeRounter)
+app.use('/complain',complainRounter)
 app.listen(process.env.PORT||4000)

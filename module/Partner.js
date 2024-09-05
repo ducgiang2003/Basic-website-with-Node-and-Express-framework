@@ -10,6 +10,9 @@ const partnerSchema = new Schema({
   country: {
     type: String,
     required: true
+  },
+  complain: {
+    type:String,
   }
 });
 

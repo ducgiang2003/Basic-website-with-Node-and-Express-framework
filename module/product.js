@@ -38,7 +38,7 @@ const productSchema = new mongoose.Schema(
            required:true
         },
         price:{
-        type:Decimal128,
+        type: Number,
         },
         partner:{
             //This type will reference other mongoose module in project 
